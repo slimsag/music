@@ -2,8 +2,11 @@
 
 This folder contains information about the Chinese Dizi instrument (in specific, the Qudi).
 
+ - [Understanding Tabatures](#understand-tabatures)
+ - [Fingering Charts](#fingering-charts)
+ - []
 
-## Tabatures
+## Understanding Tabatures
 
 Using filled, unfilled, and half-filled unicode dots to represent fingering positions:
 
