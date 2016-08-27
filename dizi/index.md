@@ -26,6 +26,10 @@ Simple notation is also used throughout the tabatures (to the right of the Engli
 
 ## C == 1, C == 2, etc
 
+- The first time it appears, it is saying the key signature of the song.
+- e.g. `c==2` means that the second note (2, in simple notation) produces the note C. Thus the song is in the key signature of Bb (B flat major).
+- Any subsequent ones do not change the key signature, but instead mean to shift 
+
 
 
 ## Tabature List
@@ -94,6 +98,34 @@ For playing B-flat major (A#) songs on a D key Dizi/Qudi.
 | D6# | 4̇ | ○●● ●●○ : ◐○○ ○○○
 | F6  | _ | ○○○ ●●●
 | G6  | 5̇ | ○●● ●●● : ●●○ ●●○
+```
+
+### Qudi 曲笛 D Key tranposed to Bb (E tuner) Fingerings (C == 1)
+
+For playing B-flat major (A#) songs on a D key Dizi/Qudi.
+
+- Range: F4-G6
+
+```
+| F4  |_.4| ●●● ●●●
+| G4  | 5̣ | ●●● ●●○
+| A4  | 6̣ | ●●● ●○○
+| A4# | 7̣ | ●●● ○○○
+
+| C5  | 1 | ●●○ ○○○
+| D5  | 2 | ●○○ ○○○
+| D5# | 3 | ○●● ○○○ : ○●● ○●●
+| E5# | _ | ○○○ ○○○
+| F5  | 4 | ○●● ●●●
+| G5  | 5 | ●●● ●●○
+| A5  | 6 | ●●● ●○○
+| A5# | 7 | ●●● ○○○
+
+| C6  | 1̇ | ●●○ ○○○
+| D6  | 2̇ | ●○○ ○○○
+| D6# | 3̇ | ○●● ●●○ : ◐○○ ○○○
+| F6  | _ | ○○○ ●●●
+| G6  | 4̇ | ○●● ●●● : ●●○ ●●○
 ```
 
 ### Qudi 曲笛 C Key Fingerings
