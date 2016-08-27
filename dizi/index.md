@@ -2,9 +2,11 @@
 
 This folder contains information about the Chinese Dizi instrument (in specific, the Qudi).
 
- - [Understanding Tabatures](#understand-tabatures)
+ - [Understanding Tabatures](#understanding-tabatures)
  - [Fingering Charts](#fingering-charts)
- - []
+   - [Qudi 曲笛 D Key Fingerings](#qudi-曲笛-d-key-fingerings)
+   - [Qudi 曲笛 D Key tranposed to Bb (E tuner) Fingerings (C == 2)](#qudi-曲笛-d-key-tranposed-to-bb-e-tuner-fingerings-c--2)
+   - [Qudi 曲笛 C Key Fingerings](#qudi-曲笛-c-key-fingerings)
 
 ## Understanding Tabatures
 
