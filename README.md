@@ -14,6 +14,10 @@ This is a bit like other Bamboo flutes except it has a very thin paper membrane 
 
 # Erhu (Chinese violin)
 
+[![Tokyo Ghoul OP 「Unravel」with erhu](https://img.youtube.com/vi/bcDvjh9xbXo/0.jpg)](https://www.youtube.com/watch?v=bcDvjh9xbXo)
+
+Basically a Chinese version of the Violin, except it only has one string and is pushed a bit like a guitar to produce a quite broad range of noise quite like the human voice.
+
 - ~~See my notes in the Erhu folder~~ (mine hasn't arrived from Singapore yet :( )
 
 # Guzheng (Chinese... pluck board..?)
