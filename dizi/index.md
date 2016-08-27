@@ -23,6 +23,11 @@ Using filled, unfilled, and half-filled unicode dots to represent fingering posi
 
 Simple notation is also used throughout the tabatures (to the right of the English notes in fingering charts below).
 
+
+## C == 1, C == 2, etc
+
+
+
 ## Tabature List
 
   - [Painted Heart - Jane Zhang](https://github.com/slimsag/music/blob/master/dizi/painted_heart.md#painted-heart---jane-zhang)
