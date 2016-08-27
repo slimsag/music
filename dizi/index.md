@@ -20,6 +20,15 @@ Using filled, unfilled, and half-filled unicode dots to represent fingering posi
 
 Simple notation is also used throughout the tabatures (to the right of the English notes in fingering charts below).
 
+## Tabature List
+
+  - [Painted Heart - Jane Zhang](https://github.com/slimsag/music/blob/master/dizi/painted_heart.md#painted-heart---jane-zhang)
+  - [Onara - Dae Jang Geum](https://github.com/slimsag/music/blob/master/dizi/onara.md#onara---dae-jang-geum)
+  - [Minuet - Johann Christian Bach](https://github.com/slimsag/music/blob/master/dizi/minuet.md#minuet---johann-christian-bach)
+  - [Spice and wolf - Tabi no Touchuu](https://github.com/slimsag/music/blob/master/dizi/spice_and_wolf.md#spice-and-wolf---tabi-no-touchuu)
+  - [zelda](https://github.com/slimsag/music/blob/master/dizi/zelda.md)
+  - [unknown](https://github.com/slimsag/music/blob/master/dizi/unknown.md)
+
 ## Fingering Charts
 
 ### Qudi 曲笛 D Key Fingerings
