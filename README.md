@@ -22,4 +22,8 @@ Basically a Chinese version of the Violin, except it only has one string and is 
 
 # Guzheng (Chinese... pluck board..?)
 
+[![兰陵王插曲 片尾曲 手掌心 古筝重奏](https://img.youtube.com/vi/xSlAM5dUsJo/0.jpg)](https://www.youtube.com/watch?v=xSlAM5dUsJo)
+
 - ~~See my notes in the Guzheng folder~~ (mine hasn't arrived from Beijing yet :( )
+
+
