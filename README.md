@@ -24,6 +24,8 @@ Basically a Chinese version of the Violin, except it only has one string and is 
 
 [![兰陵王插曲 片尾曲 手掌心 古筝重奏](https://img.youtube.com/vi/xSlAM5dUsJo/0.jpg)](https://www.youtube.com/watch?v=xSlAM5dUsJo)
 
+Like a mix between a piano and a guitar =) You pluck it like a guitar, but it has ~21 strings so it has a much larger range than a guitar can perform.
+
 - ~~See my notes in the Guzheng folder~~ (mine hasn't arrived from Beijing yet :( )
 
 
