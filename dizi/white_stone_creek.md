@@ -1,4 +1,4 @@
-# 白石溪 / Báishí Xī / White Stone Creek
+# 白石溪 / Báishí Xī / White Stone Creek ([Youtube](https://www.youtube.com/watch?v=-b0vlchYYRQ))
 
 ```
 A=1 (Key signature A major **BECAUSE** a is the first note, in simple notation, of A major)
