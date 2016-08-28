@@ -1,5 +1,7 @@
 # Spice and wolf - Tabi no Touchuu
 
+[Youtube](https://www.youtube.com/watch?v=-b0vlchYYRQ)
+
 ```
 C=2 (Bb **BECAUSE** C is the 2nd note of B flat major)
 67 #121 67 121 111 7 5 3
