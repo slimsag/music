@@ -1,7 +1,7 @@
 # Spice and wolf - Tabi no Touchuu
 
 ```
-c=2
+c=2 (Bb **BECAUSE** c is the 2nd note of B flat major)
 67 #121 67 121 111 7 5 3
 67 #121 67 121 111 7 5 1
 67 #121 67 121 111 7 5 3
@@ -20,7 +20,7 @@ c=2
 666 712 666 712 3 24 3
 666 712 666 712 3 24 3
 
-c=1
+c=1 (Offset all notes such that c == 1 in the key signature of Bb)
 #56 76 #56 76 71 32 61 32
 34 65 72 43 12 32 43 7
 #56 76 #56 76 71 32 61 32
