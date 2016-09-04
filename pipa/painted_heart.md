@@ -1,3 +1,42 @@
+# Notes for Pipa
+
+```
+-------------------
+D3 D3 E3 - E3 G3 F3#
+E3 D3 A2 - B2
+-------------------
+B2 D3 E3 - E3 G3 F3#
+D3 G3 A3 - B3
+-------------------
+D4 B3 B3 - A3 G3 A3
+G3 F3# G3 - A3 F3# D4
+E3 B2 D3 - E3 E3 B3
+A3 G3 F3# - D3 E3 E3
+-------------------
+A2 B2 D3 - E3 E3 G3
+F3# E3 D3 - E3 A2 B2
+-------------------
+B2 D3 E3 - E3 G3 F3#
+D3 G3 A3 - B3
+-------------------
+D4 B3 B3 - A3 G3 A3
+G3 F3# G3 - A3 F3# D4
+E3 B2 D3 - E3 E3 B3
+A3 G3 F3# - D3 E3 E3
+-------------------
+D4 B3 B3 - A3 G3 A3
+A3 D4 B3
+-------------------
+D4 B3 B3 - A3 G3 A3
+D4 E4 A3 - B3 B3
+-------------------
+D4 B3 B3 - A3 G3 A3
+G3 F3# G3 - A3 F3# D4
+E4 B3 D4 - E4 E4 B3
+A3 G3 F3# - D4 E4 E4
+-------------------
+```
+
 # Notes for D key Dizi
 
 (G5s might be incorrect and in reality F6#)
