@@ -38,10 +38,18 @@ Note: to read direction, face monitor with your Pipa directly facing your screen
 [NA , NA , NA , C#5]
 [NA , NA , NA , D5 ]
 [NA , NA , NA , Eb5]
-
-
-
-
-
-
 ```
+
+# Information
+
+- Very useful: [Pipa by Moshe Denburg VICO.pdf](http://www.atlasensemble.nl/assets/images/practical%20info/Pipa%20by%20Moshe%20Denburg%20VICO.pdf)
+- [Gao Hong Book Release: Chinese Pipa Method](http://newmusicmn.com/mn/gao-hong-book-release-chinese-pipa-method/)
+- [Playing pipa, the traditional Chinese musical instrument](http://www.whatsonxiamen.com/education/3954.html)
+- [Pipa - a Chinese lute or guitar (brief history)](http://www.philmultic.com/pipa.html)
+- [forum discussion..](http://starvoid.proboards.com/thread/1189/beginner-pipa)
+- [Wu Man Plays The Pipa](http://www.nytimes.com/video/arts/music/100000002490823/in-performance-wu-man.html)
+- [Wu Man: Giving the Pipa New Life](https://www.sfcv.org/events-calendar/artist-spotlight/wu-man-giving-the-pipa-new-life)
+- [The Way of the Pipa: Structure and Imagery in Chinese Lute Music](https://books.google.com/books?id=avjpd2zHZSgC&pg=PA146&lpg=PA146&dq=pipa+how+to+play&source=bl&ots=sRZpV2U2sp&sig=XRHd30mgB0mqV5nqye1ea2yRS04&hl=en&sa=X&ved=0ahUKEwjCrviEsfTOAhUM8GMKHbVICHc4FBDoAQgzMAQ#v=onepage&q=pipa%20how%20to%20play&f=false)
+- [gao hong](http://www.chinesepipa.com/)
+- [From Chairman Mao to Kung Fu Panda: Wu Man Reflects on Playing the Pipa](http://asiasociety.org/blog/asia/chairman-mao-kung-fu-panda-wu-man-reflects-playing-pipa)
+
