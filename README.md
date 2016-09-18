@@ -1,6 +1,6 @@
 # music
 
-This repository holds music and general information about Chinese instruments (Dizi, Erhu, Guzheng).
+This repository holds music and general information about Chinese instruments (Dizi, Erhu, Pipa, and Guzheng).
 
 Basically, this is my personal notes for while I learn to play (since most resources are, well, in Chinese and I can only read English).
 
@@ -18,7 +18,7 @@ This is a bit like other Bamboo flutes except it has a very thin paper membrane 
 
 Basically a Chinese version of the Violin, except it only has one string and is pushed a bit like a guitar to produce a quite broad range of noise quite like the human voice.
 
-- ~~See my notes in the Erhu folder~~ (mine hasn't arrived from Singapore yet :( )
+- See my notes in the [Erhu folder](https://github.com/slimsag/music/blob/master/erhu/index.md#erhu).
 
 # Guzheng (Chinese... pluck board..?)
 
@@ -26,6 +26,12 @@ Basically a Chinese version of the Violin, except it only has one string and is 
 
 Like a mix between a piano and a guitar =) You pluck it like a guitar, but it has ~21 strings so it has a much larger range than a guitar can perform.
 
-- ~~See my notes in the Guzheng folder~~ (mine hasn't arrived from Beijing yet :( )
+- See my notes in the [guzheng folder](https://github.com/slimsag/music/blob/master/guzheng/index.md#guzheng).
 
+# Pipa (Chinese 'guitar')
 
+[![风华国乐_民乐 琵琶语 蒋彦（琵琶） 高清](https://img.youtube.com/vi/RhgBfQnPu64/0.jpg)](https://www.youtube.com/watch?v=RhgBfQnPu64)
+
+Sort of like a guitar, except the top frets are mostly used for creating a 'wavy' noise and the strings are much tougher physically so it produces a higher pitch than a guitar. Not really 'strummed' like a guitar, but rather rapidly plucked with two or five fingers at a time.
+
+- See my notes in the [Pipa folder](https://github.com/slimsag/music/blob/master/pipa/index.md#pipa).
