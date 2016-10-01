@@ -45,8 +45,6 @@ Simple notation is also used throughout the tabatures (to the right of the Engli
 
 ## Fingering Charts
 
-```
-
 | Fingering | S.N. | C Key | D Key | E Key | F Key | G Key | Notes             |
 |-----------|------|-------|-------|-------|-------|-------|-------------------|
 | ●●● ●●●   | 5̣    | G4    | A4    |       |       |       | Std.              |
@@ -72,7 +70,6 @@ Simple notation is also used throughout the tabatures (to the right of the Engli
 * Std. == Standard blowing
 * High. == Higher octave whistling
 * Exp. == VERY high whistling, very hard to reach / expert.
-```
 
 ### Qudi 曲笛 D Key Fingerings
 
