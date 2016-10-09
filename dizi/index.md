@@ -69,7 +69,7 @@ Simple notation is also used throughout the tabatures (to the right of the Engli
 * X Key == Dizi in the key of 'X'
 * Std. == Standard blowing
 * High. == Higher octave whistling
-* Exp. == VERY high whistling, very hard to reach / expert.
+* Exp. == VERY high whistling, very hard to reach / expert. Technically called the "altissimo octave".
 * `<Note> +` == Not actually in the key of 'X' but is playable.
 
 ### Qudi 曲笛 D Key Fingerings
