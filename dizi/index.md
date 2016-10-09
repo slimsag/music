@@ -45,27 +45,27 @@ Simple notation is also used throughout the tabatures (to the right of the Engli
 
 ## Fingering Charts
 
-| Fingering | S.N. | C Key | D Key | E Key | F Key | G Key | Notes             |
-|-----------|------|-------|-------|-------|-------|-------|-------------------|
-| ●●● ●●●   | 5̣    | G4    | A4    | B4    | C5    | D5    | Std.              |
-| ●●● ●●○   | 6̣    | A4    | B4    | C5#   | D5    | E5    | Std.              |
-| ●●● ●○○   | 7̣    | B4    | C#5   | D5#   | E5    | F5#   | Std.              |
-| ●●● ○○○   | 1    | C5    | D5    | E5    | F5    | G5    | Std.              |
-| ●●○ ○○○   | 2    | D5    | E5    | F5#   | G5    | A5    | Std.              |
-| ●○○ ○○○   | 3    | E5    | F#5   | G5#   | A5    | B5    | Std.              |
-| ○●● ○○○   | 4    | F5    | G5    | A5    | A5#   | C6    | Std. Alt ○●● ○●●  |
-| ○○○ ○○○   | _    | F#5 + | G#5 + | A5# + | B5 +  | C6# + | Std.              |
-| ○●● ●●●   | 5    | G5    | A5    | B5    | C6    | D6    | High.             |
-| ●●● ●●○   | 6    | A5    | B5    | C6#   | D6    | E6    | High.             |
-| ●●● ●○○   | 7    | B5    | C#6   | D6#   | E6    | F6#   | High.             |
-| ●●● ○○○   | 1̇    | C6    | D6    | E6    | F6    | G6    | High.             |
-| ●●○ ○○○   | 2̇    | D6    | E6    | F6#   | G6    | A6    | High.             |
-| ●○○ ○○○   | 3̇    | E6    | F6#   | G6#   | A6    | B6    | High.             |
-| ○●● ●●○   | 4̇    | F6    | G6    | A6    | A6#   | C7    | Exp. Alt ◐○○ ○○○  |
-| ○○○ ●●●   | _    | F#6 + | G#6 + | A6# + | B6 +  | C7# + | Exp.              |
-| ○●● ●●●   | 5̇    | G6    | A6    | B6    | C7    | D7    | Exp. Alt ●●○ ●●○  |
+| Fingering | S.N. | C Key | D Key | E Key | F Key | G Key | Notes                   |
+|-----------|------|-------|-------|-------|-------|-------|-------------------------|
+| ●●● ●●●   | 5̣    | G4    | A4    | B4    | C5    | D5    | Std.                    |
+| ●●● ●●○   | 6̣    | A4    | B4    | C5#   | D5    | E5    | Std.                    |
+| ●●● ●○○   | 7̣    | B4    | C#5   | D5#   | E5    | F5#   | Std.                    |
+| ●●● ○○○   | 1    | C5    | D5    | E5    | F5    | G5    | Std. Start of the scale |
+| ●●○ ○○○   | 2    | D5    | E5    | F5#   | G5    | A5    | Std.                    |
+| ●○○ ○○○   | 3    | E5    | F#5   | G5#   | A5    | B5    | Std.                    |
+| ○●● ○○○   | 4    | F5    | G5    | A5    | A5#   | C6    | Std. Alt ○●● ○●●        |
+| ○○○ ○○○   |      | F#5 + | G#5 + | A5# + | B5 +  | C6# + | Std.                    |
+| ○●● ●●●   | 5    | G5    | A5    | B5    | C6    | D6    | High.                   |
+| ●●● ●●○   | 6    | A5    | B5    | C6#   | D6    | E6    | High.                   |
+| ●●● ●○○   | 7    | B5    | C#6   | D6#   | E6    | F6#   | High. End of the scale  |
+| ●●● ○○○   | 1̇    | C6    | D6    | E6    | F6    | G6    | High.                   |
+| ●●○ ○○○   | 2̇    | D6    | E6    | F6#   | G6    | A6    | High.                   |
+| ●○○ ○○○   | 3̇    | E6    | F6#   | G6#   | A6    | B6    | High.                   |
+| ○●● ●●○   | 4̇    | F6    | G6    | A6    | A6#   | C7    | Exp. Alt ◐○○ ○○○        |
+| ○○○ ●●●   |      | F#6 + | G#6 + | A6# + | B6 +  | C7# + | Exp.                    |
+| ○●● ●●●   | 5̇    | G6    | A6    | B6    | C7    | D7    | Exp. Alt ●●○ ●●○        |
 
-* S.N. == Simple Notation
+* S.N. == [Simple Notation](https://en.wikipedia.org/wiki/Numbered_musical_notation#Numbered_notation_described)
 * X Key == Dizi in the key of 'X'
 * Std. == Standard blowing
 * High. == Higher octave whistling
