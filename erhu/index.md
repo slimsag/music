@@ -1,5 +1,5 @@
 
-# Fingering Positions
+# Fingering Chart
 
 Left row is left string / string closest to you when holding the erhu. Right row is the right string / furthest way from you (also sounds highest pitch).
 ```
