@@ -20,7 +20,7 @@ Basically a Chinese version of the Violin, except it only has one string and is 
 
 - See my notes in the [Erhu folder](https://github.com/slimsag/music/blob/master/erhu/index.md#erhu).
 
-# Guzheng (Chinese... pluck board..?)
+# Guzheng (Chinese zither)
 
 [![兰陵王插曲 片尾曲 手掌心 古筝重奏](https://img.youtube.com/vi/xSlAM5dUsJo/0.jpg)](https://www.youtube.com/watch?v=xSlAM5dUsJo)
 
