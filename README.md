@@ -6,7 +6,7 @@ Basically, this is my personal notes for while I learn to play (since most resou
 
 # Dizi (Chinese Bamboo Flute)
 
-[![14. Dizi (Chinese bamboo flute) - Painted Heart](https://img.youtube.com/vi/tuHiYjamHbE/0.jpg)](https://www.youtube.com/watch?v=tuHiYjamHbE)
+[![14. Dizi (Chinese bamboo flute) - Painted Heart](https://img.youtube.com/vi/ERYymjFXeiI/0.jpg)](https://youtu.be/ERYymjFXeiI?t=43s)
 
 This is a bit like other Bamboo flutes except it has a very thin paper membrane covering one hole, which causes it to produce a buzzing noise (sounds somewhere inbetween a recorder and a kazoo, depending on how taunt you glue the membrane on).
 
