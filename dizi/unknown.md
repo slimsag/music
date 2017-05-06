@@ -1,4 +1,4 @@
-# Something
+# Something - Dango Diakazuku
 
 ```
 | G4  | 6̣ | ●●● ●●○
