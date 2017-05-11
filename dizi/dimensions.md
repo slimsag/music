@@ -1,3 +1,4 @@
+Wood D key - 23.9mm OD - 17.44 ID - 3.75mm thickness
 
 ```
 - 13mm
