@@ -1,6 +1,10 @@
 
 # Fingering Chart
 
+- 30 stops
+- each stop 10mm apart exactly
+- 50mm offset from base of instrument (350mm from base to strings tied to handle)
+
 Left row is left string / string closest to you when holding the erhu. Right row is the right string / furthest way from you (also sounds highest pitch).
 ```
 D4  A4
@@ -32,4 +36,5 @@ D#6 A#6
 E6  B6
 F6  C7
 F#6 C#7
+G6  D7
 ```
