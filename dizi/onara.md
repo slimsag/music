@@ -1,10 +1,16 @@
-# Onara - Dae Jang Geum
+# 希望 - Hope (Onara - Dae Jang Geum)
+
+- YouTube: https://www.youtube.com/watch?v=Ydu-Y7_6XQ4
 
 ```
-- 0:27
-| E4  | 2 | ●●○ ○○○
-| F4# | 3 | ●○○ ○○○
-. E4  | 2 | ●.○ ○○○ (●○○ ○○○ -> ●●○ ○○○ -> ●○○ ○○○)
+- 0:43
+E5
+F5#
+F5# -> E5 -> F5#
+```
+
+
+```
 . F4# | 3 | .○○ ○○○
 | E4  | 2 | ●●○ ○○○
 | D4  | 1 | ●●● ○○○
