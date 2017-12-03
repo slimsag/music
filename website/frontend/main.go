@@ -25,6 +25,9 @@ type PageView struct {
 
 func (p *PageView) Render() vecty.ComponentOrHTML {
 	return elem.Body(
+		vecty.Markup(
+			vecty.Style("height", "100%"),
+		),
 		vecty.If(p.chosenSong == "", p.songList()),
 		vecty.If(p.chosenSong != "", p.song(p.chosenSong)),
 	)
