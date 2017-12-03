@@ -7,38 +7,9 @@ import (
 	"log"
 	"os"
 
+	"github.com/slimsag/music/pkg/dizi"
 	"github.com/slimsag/music/pkg/mxl"
 )
-
-// fingering describes the finger positions that produce a note.
-type fingering struct {
-	simpleNotation string
-	fingers        string
-	altis          bool
-}
-
-// A map of Dizi key names (e.g. "C", "D", "E", etc.) to their respective note -> fingering position mapping.
-var noteMappings = map[string]map[string]fingering{
-	"D": map[string]fingering{
-		"A4":  {"5̣", "●●● ●●●", false},
-		"B4":  {"6̣", "●●● ●●○", false},
-		"C#5": {"7̣", "●●● ●○○", false},
-		"D5":  {"1", "●●● ○○○", false},
-		"E5":  {"2", "●●○ ○○○", false},
-		"F#5": {"3", "●○○ ○○○", false},
-		"G5":  {"4", "○●● ○○○ : ○●● ○●●", false},
-		"G#5": {"_", "○○○ ○○○", false},
-		"A5":  {"5", "○●● ●●●", false},
-		"B5":  {"6", "●●● ●●○", false},
-		"C#6": {"7", "●●● ●○○", false},
-		"D6":  {"1̇", "●●● ○○○", false},
-		"E6":  {"2̇", "●●○ ○○○", false},
-		"F#6": {"3̇", "●○○ ○○○", false},
-		"G6":  {"4̇", "○●● ●●○ : ◐○○ ○○○", true},
-		"G#6": {"_", "○○○ ●●●", true},
-		"A6":  {"5̇", "○●● ●●● : ●●○ ●●○", true},
-	},
-}
 
 func main() {
 	if len(os.Args) != 3 {
@@ -48,10 +19,10 @@ func main() {
 	file := os.Args[2]
 
 	// Validate chosen Dizi key.
-	noteMapping, ok := noteMappings[key]
+	noteMapping, ok := dizi.NoteMappings[key]
 	if !ok {
 		var keys []string
-		for k := range noteMappings {
+		for k := range dizi.NoteMappings {
 			keys = append(keys, k)
 		}
 		log.Fatalf("unsupported Dizi key %q, valid keys are: %q", key, keys)
@@ -124,7 +95,7 @@ func main() {
 				if sharp == "" {
 					note = note + " "
 				}
-				fmt.Printf("| %s | %s | %s\n", note, tab.simpleNotation, tab.fingers)
+				fmt.Printf("| %s | %s | %s\n", note, tab.SimpleNotation, tab.Fingers)
 			}
 			fmt.Printf("\n")
 		}
