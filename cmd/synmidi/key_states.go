@@ -2,6 +2,11 @@ package main
 
 import "fmt"
 
+type key struct {
+	state      keyState
+	isLeftHand bool
+}
+
 type keyState int
 
 const (
@@ -12,21 +17,37 @@ const (
 	keyStateReleased     keyState = iota
 )
 
-type keyStateList []keyState
+type keyList []key
 
-func (k keyStateList) debugPrint() {
+func (k keyList) debugPrint() {
 	for _, k := range k {
-		switch k {
+		switch k.state {
 		case keyStateNone:
 			fmt.Printf(" ")
 		case keyStatePressed:
-			fmt.Printf("↓")
+			if k.isLeftHand {
+				fmt.Printf("↙")
+			} else {
+				fmt.Printf("↘")
+			}
 		case keyStateContinued:
-			fmt.Printf("|")
+			if k.isLeftHand {
+				fmt.Printf("L")
+			} else {
+				fmt.Printf("R")
+			}
 		case keyStatePressedAgain:
-			fmt.Printf("↕")
+			if k.isLeftHand {
+				fmt.Printf("⇐")
+			} else {
+				fmt.Printf("⇒")
+			}
 		case keyStateReleased:
-			fmt.Printf("↑")
+			if k.isLeftHand {
+				fmt.Printf("↖")
+			} else {
+				fmt.Printf("↗")
+			}
 		default:
 			fmt.Printf("�")
 		}
@@ -62,45 +83,59 @@ func (k keyStateList) debugPrint() {
 //
 // This functions takes into account the above in order to produce a list of
 // key states.
-func determineKeyStates(frames []*frameInfo) []keyStateList {
-	results := make([]keyStateList, len(frames))
+func determineKeyStates(frames []*frameInfo) []keyList {
+	results := make([]keyList, len(frames))
 	for frameIndex, frame := range frames {
-		frameResult := make(keyStateList, len(frame.Keys))
+		frameResult := make(keyList, len(frame.Keys))
 
 		if frameIndex == 0 || frameIndex+1+1 >= len(frames) {
 			// Too early/late to do any lookbehind / lookahead. These keys do
 			// not need correction anyways.
-			for keyIndex, key := range frame.Keys {
-				if key {
-					frameResult[keyIndex] = keyStatePressed
+			for keyIndex, k := range frame.Keys {
+				if k {
+					frameResult[keyIndex] = key{state: keyStatePressed, isLeftHand: frame.IsLeftHandKey[keyIndex]}
 				} else {
-					frameResult[keyIndex] = keyStateReleased
+					frameResult[keyIndex] = key{state: keyStateReleased, isLeftHand: frame.IsLeftHandKey[keyIndex]}
 				}
 			}
 			results[frameIndex] = frameResult
 			continue
 		}
 
-		for keyIndex, key := range frame.Keys {
-			downCurrentFrame := key
+		for keyIndex, k := range frame.Keys {
+			downCurrentFrame := k
 			downPreviousFrame := frames[frameIndex-1].Keys[keyIndex]
 			downNextNextFrame := frames[frameIndex+1+1].Keys[keyIndex]
 
 			calculatedDownPreviousFrame := false
 			if len(results) > 0 {
 				lastFrame := results[frameIndex-1][keyIndex]
-				calculatedDownPreviousFrame = lastFrame == keyStatePressed || lastFrame == keyStatePressedAgain || lastFrame == keyStateContinued
+				calculatedDownPreviousFrame = lastFrame.state == keyStatePressed || lastFrame.state == keyStatePressedAgain || lastFrame.state == keyStateContinued
+			}
+
+			// TODO(slimsag): If a key starts on the left hand and gets PressedAgain with the
+			// right hand, we would not send the proper states. Fixing this would probably require
+			// separating keyStatePressedAgain events entirely.
+			isLeftHand := frame.IsLeftHandKey[keyIndex]
+			if !k {
+				// Key was not pressed down, so we had no way to know if it
+				// was really a left key or not.
+				if downNextNextFrame {
+					isLeftHand = frames[frameIndex+1+1].IsLeftHandKey[keyIndex]
+				} else if downPreviousFrame {
+					isLeftHand = frames[frameIndex-1].IsLeftHandKey[keyIndex]
+				}
 			}
 
 			switch {
 			case !downPreviousFrame && downCurrentFrame && !calculatedDownPreviousFrame:
-				frameResult[keyIndex] = keyStatePressed
+				frameResult[keyIndex] = key{state: keyStatePressed, isLeftHand: isLeftHand}
 			case downPreviousFrame && !downCurrentFrame && downNextNextFrame:
-				frameResult[keyIndex] = keyStatePressedAgain
+				frameResult[keyIndex] = key{state: keyStatePressedAgain, isLeftHand: isLeftHand}
 			case downPreviousFrame && !downCurrentFrame && !downNextNextFrame:
-				frameResult[keyIndex] = keyStateReleased
+				frameResult[keyIndex] = key{state: keyStateReleased, isLeftHand: isLeftHand}
 			case (downPreviousFrame || calculatedDownPreviousFrame) && (downCurrentFrame || downNextNextFrame):
-				frameResult[keyIndex] = keyStateContinued
+				frameResult[keyIndex] = key{state: keyStateContinued, isLeftHand: isLeftHand}
 			}
 		}
 		results[frameIndex] = frameResult

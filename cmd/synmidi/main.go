@@ -82,7 +82,6 @@ func main() {
 		songFrame := 0
 		firstFrame := true
 		var baseInfo *info
-		lastUpdate := time.Now()
 		var frameInfos []*frameInfo
 		for _, info := range infos {
 			if filepath.Ext(info.Name()) != ".png" {
@@ -110,7 +109,7 @@ func main() {
 				// hit.
 				fs := float64(time.Second)
 				frameInfo.Time = time.Duration((float64(songFrame) * fs) / frameRate.FPS())
-				frameInfo.debugPrint()
+				frameInfo.debugPrintLine()
 				frameInfos = append(frameInfos, frameInfo)
 			}
 
@@ -121,10 +120,6 @@ func main() {
 				if err := writePNG(filepath.Join("debug", info.Name()), frameInfo.debug); err != nil {
 					log.Fatal(err)
 				}
-			}
-			if time.Since(lastUpdate) > 1*time.Second {
-				lastUpdate = time.Now()
-				fmt.Println("Processing frame", info.Name())
 			}
 		}
 		data, err := json.MarshalIndent(frameInfos, "", "  ")
@@ -197,7 +192,7 @@ func main() {
 				if len(measure.Notes) > 0 { //&& !noChange {
 					part.Measures = append(part.Measures, measure)
 				}
-				f.debugPrint()
+				f.debugPrintLine()
 			}
 			doc.Parts = append(doc.Parts, part)
 
@@ -229,41 +224,45 @@ func main() {
 		writeMIDI := func(wr smf.Writer) {
 			wr.SetDelta(0)
 
-			for frameIndex, keyStates := range determineKeyStates(frameInfos) {
-				for keyIndex, keyState := range keyStates {
+			for frameIndex, keys := range releaseBoundKeys(determineKeyStates(frameInfos)) {
+				for keyIndex, key := range keys {
 					midiNote := uint8(finalKeyOffset + keyIndex)
 					velocity := uint8(90)
-					switch keyState {
+					ch := channel.Ch0
+					if !key.isLeftHand {
+						ch = channel.Ch1
+					}
+					switch key.state {
 					case keyStatePressed:
-						_, err := wr.Write(channel.Ch2.NoteOn(midiNote, velocity))
+						_, err := wr.Write(ch.NoteOn(midiNote, velocity))
 						if err != nil {
 							log.Fatal(err)
 						}
 					case keyStateContinued, keyStateNone:
 						// Must send a message or else SetDelta takes no effect.
-						_, err := wr.Write(channel.Ch2.AfterTouch(255))
+						_, err := wr.Write(ch.AfterTouch(255))
 						if err != nil {
 							log.Fatal(err)
 						}
 					case keyStatePressedAgain:
-						_, err = wr.Write(channel.Ch2.NoteOff(midiNote))
+						_, err = wr.Write(ch.NoteOff(midiNote))
 						if err != nil {
 							log.Fatal(err)
 						}
 						wr.SetDelta(1)
-						_, err := wr.Write(channel.Ch2.NoteOn(midiNote, velocity))
+						_, err := wr.Write(ch.NoteOn(midiNote, velocity))
 						if err != nil {
 							log.Fatal(err)
 						}
 					case keyStateReleased:
-						_, err = wr.Write(channel.Ch2.NoteOff(midiNote))
+						_, err = wr.Write(ch.NoteOff(midiNote))
 						if err != nil {
 							log.Fatal(err)
 						}
 					}
 				}
 				frameInfos[frameIndex].debugPrint()
-				keyStates.debugPrint()
+				keys.debugPrint()
 				wr.SetDelta(1 * uint32(timeCode.SubFrames))
 			}
 
@@ -369,18 +368,23 @@ func detectInfo(img string) (*info, error) {
 }
 
 type frameInfo struct {
-	debug   image.Image
-	ImgPath string
-	Keys    []bool
-	Time    time.Duration
+	debug         image.Image
+	ImgPath       string
+	Keys          []bool
+	IsLeftHandKey []bool
+	Time          time.Duration
 }
 
 func (f frameInfo) debugPrint() {
 	fmt.Print(f.ImgPath)
 	fmt.Print("  ")
-	for _, k := range f.Keys {
+	for i, k := range f.Keys {
 		if k {
-			fmt.Printf("X")
+			if f.IsLeftHandKey[i] {
+				fmt.Printf("L")
+			} else {
+				fmt.Printf("R")
+			}
 			continue
 		}
 		fmt.Printf("-")
@@ -409,12 +413,17 @@ func detectFrameInfo(info *info, img string) (*frameInfo, error) {
 
 	frameInfo := &frameInfo{debug: src, ImgPath: img}
 	frameInfo.Keys = make([]bool, len(info.keys))
+	frameInfo.IsLeftHandKey = make([]bool, len(info.keys))
 	for i, k := range info.keys {
 		c1 := color.RGBAModel.Convert(src.At(k.center.X, k.center.Y)).(color.RGBA)
 		c2 := color.RGBAModel.Convert(k.actualColor).(color.RGBA)
 		dist := uint32(distu8(c1.R, c2.R)) + uint32(distu8(c1.G, c2.G)) + uint32(distu8(c1.B, c2.B))
 		if dist > 100 {
 			frameInfo.Keys[i] = true
+
+			// Left hand (blue) keys usually have equal parts of blue and green colors.
+			// Right hand (green) keys usually have much less blue than green.
+			frameInfo.IsLeftHandKey[i] = distu8(c1.B, c2.G) < 150
 		}
 	}
 	return frameInfo, nil
