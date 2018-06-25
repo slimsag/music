@@ -493,59 +493,6 @@ func determineKeyStates(frames []*frameInfo) []keyStateList {
 		results[frameIndex] = frameResult
 	}
 	return results
-
-	/*
-		oneKeyPressed := func(start, end int) bool {
-			last := frames[start]
-			oneKeyPressed := false
-			for i := start + 1; i <= end; i++ {
-				oneKeyPressed = oneKeyPressed || any(last.Keys) || any(frames[i].Keys)
-				last = frames[i]
-			}
-			return oneKeyPressed
-		}
-
-		framesEqual := func(start, end int) bool {
-			last := frames[start]
-			for i := start + 1; i <= end; i++ {
-				//fmt.Println(i)
-				if !frameInfosEqual(last.Keys, frames[i].Keys) {
-					return false
-				}
-				last = frames[i]
-			}
-			return true
-		}
-
-		look := 2
-		offset := 2
-		for i := range frames {
-			if i < offset+look || i > len(frames)-offset-look-1 {
-				continue
-			}
-
-			//fmt.Println(i, len(frames))
-			prevEqual := framesEqual(i-offset-look, i-offset-1)
-			prevOneKey := oneKeyPressed(i-offset-look, i-offset-1)
-			nextEqual := framesEqual(i+offset+1, i+offset+look)
-			nextOneKey := oneKeyPressed(i+offset+1, i+offset+look)
-			immediateEqual := framesEqual(i-offset, i) || framesEqual(i, i+offset)
-			_ = prevOneKey
-			_ = nextOneKey
-			_ = immediateEqual
-			_ = prevEqual
-			_ = nextEqual
-			//if prevEqual && nextEqual && !immediateEqual {
-			//	frames[i].start = true
-			//}
-
-			//nextBlank := !any(frames[i+1].Keys)
-			if prevEqual && nextEqual && !immediateEqual { //} && !nextBlank {
-				frames[i].start = true
-				copy(frames[i].Keys, frames[i+offset].Keys)
-			}
-		}
-	*/
 }
 
 type frameInfo struct {
