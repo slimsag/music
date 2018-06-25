@@ -224,16 +224,47 @@ func main() {
 		writeMIDI := func(wr smf.Writer) {
 			wr.SetDelta(0)
 
-			for frameIndex, keys := range releaseBoundKeys(determineKeyStates(frameInfos)) {
+			downLeftKeys := make([]bool, len(frameInfos[0].Keys))
+			downRightKeys := make([]bool, len(frameInfos[0].Keys))
+
+			for frameIndex, keys := range determineKeyStates(frameInfos) {
 				for keyIndex, key := range keys {
 					midiNote := uint8(finalKeyOffset + keyIndex)
 					velocity := uint8(90)
-					ch := channel.Ch0
+					leftCh := channel.Ch0
+					rightCh := channel.Ch1
+					ch := leftCh
 					if !key.isLeftHand {
-						ch = channel.Ch1
+						ch = rightCh
 					}
+
+					if key.state == keyStatePressed || key.state == keyStatePressedAgain {
+						if key.isLeftHand && downRightKeys[keyIndex] {
+							// Must release the right key.
+							_, err = wr.Write(rightCh.NoteOff(midiNote))
+							if err != nil {
+								log.Fatal(err)
+							}
+							wr.SetDelta(1)
+						}
+						if !key.isLeftHand && downLeftKeys[keyIndex] {
+							// Must release the left key.
+							_, err = wr.Write(leftCh.NoteOff(midiNote))
+							if err != nil {
+								log.Fatal(err)
+							}
+							wr.SetDelta(1)
+						}
+					}
+
 					switch key.state {
 					case keyStatePressed:
+						if key.isLeftHand {
+							downLeftKeys[keyIndex] = true
+						} else {
+							downRightKeys[keyIndex] = true
+						}
+
 						_, err := wr.Write(ch.NoteOn(midiNote, velocity))
 						if err != nil {
 							log.Fatal(err)
@@ -255,6 +286,12 @@ func main() {
 							log.Fatal(err)
 						}
 					case keyStateReleased:
+						if key.isLeftHand {
+							downLeftKeys[keyIndex] = false
+						} else {
+							downRightKeys[keyIndex] = false
+						}
+
 						_, err = wr.Write(ch.NoteOff(midiNote))
 						if err != nil {
 							log.Fatal(err)
@@ -421,9 +458,16 @@ func detectFrameInfo(info *info, img string) (*frameInfo, error) {
 		if dist > 100 {
 			frameInfo.Keys[i] = true
 
-			// Left hand (blue) keys usually have equal parts of blue and green colors.
-			// Right hand (green) keys usually have much less blue than green.
-			frameInfo.IsLeftHandKey[i] = distu8(c1.B, c2.G) < 150
+			// Left hand keys are usually this blue color.
+			blueKey := color.RGBA{R: 116, G: 203, B: 197, A: c1.A}
+
+			// Right hand keys are usually this greenish color (I am colorblind, it might be yellow-ish).
+			greenishKey := color.RGBA{R: 233, G: 188, B: 78, A: c1.A}
+
+			blueDist := uint32(distu8(c1.R, blueKey.R)) + uint32(distu8(c1.G, blueKey.G)) + uint32(distu8(c1.B, blueKey.B))
+			greenishDist := uint32(distu8(c1.R, greenishKey.R)) + uint32(distu8(c1.G, greenishKey.G)) + uint32(distu8(c1.B, greenishKey.B))
+
+			frameInfo.IsLeftHandKey[i] = blueDist < greenishDist
 		}
 	}
 	return frameInfo, nil
