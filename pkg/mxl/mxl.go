@@ -133,13 +133,13 @@ type Float64 struct {
 
 // Part represents a part in a piece of music for the Document.
 type Part struct {
-	ID       string    `xml:"id,attr,omitempty"`
+	ID       string    `xml:"id,attr"` // required
 	Measures []Measure `xml:"measure,omitempty"`
 }
 
 // Measure represents a measure in a piece of music for a Part.
 type Measure struct {
-	Number     int           `xml:"number,attr,omitempty"`
+	Number     int           `xml:"number,attr"` // required
 	Width      float64       `xml:"width,attr,omitempty"`
 	Print      *Print        `xml:"print,omitempty"`
 	Direction  *Direction    `xml:"direction,omitempty"`
