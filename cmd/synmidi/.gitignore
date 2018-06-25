@@ -1,0 +1,6 @@
+*.png
+*.mid
+*.json
+*.mp4
+*.xml
+.DS_Store
