@@ -4,6 +4,8 @@ This directory contains a tool capable of converting Synthesia YouTube videos in
 
 The process (and code) is quite complex, but ultimately it produces quite good results.
 
+![image](https://user-images.githubusercontent.com/3173176/41830562-a2fb374a-77f6-11e8-8888-92c60a8b4a92.png)
+
 ## Dependencies
 
 - Go
