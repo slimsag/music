@@ -18,13 +18,10 @@ import (
 
 	"github.com/otium/ytdl"
 
-	"github.com/gomidi/midi/midimessage/channel" // (Channel Messages)
-	"github.com/gomidi/midi/midimessage/meta"    // (Meta Messages)
+	"github.com/gomidi/midi/midimessage/channel"
+	"github.com/gomidi/midi/midimessage/meta"
 	"github.com/gomidi/midi/smf"
 	"github.com/gomidi/midi/smf/smfwriter"
-	// you may also want to use these
-	// github.com/gomidi/midi/midimessage/cc         (ControlChange Messages)
-	// github.com/gomidi/midi/midimessage/sysex      (System Exclusive Messages)
 )
 
 var (
@@ -115,9 +112,6 @@ func main() {
 				frameInfo.Time = time.Duration((float64(songFrame) * fs) / frameRate.FPS())
 				frameInfo.debugPrint()
 				frameInfos = append(frameInfos, frameInfo)
-				//if songFrame > 200 {
-				//	break
-				//}
 			}
 
 			if false {
@@ -132,21 +126,6 @@ func main() {
 				lastUpdate = time.Now()
 				fmt.Println("Processing frame", info.Name())
 			}
-			/*
-				lineAtTop, err := hasLineAtTop(filepath.Join("frames", info.Name()))
-				if err != nil {
-					log.Fatal(err)
-				}
-				if lineAtTop {
-					fmt.Println(lineAtTop, info.Name())
-					cmd := exec.Command("cp", filepath.Join("frames", info.Name()), filepath.Join("frames/reduced", info.Name()))
-					cmd.Stdout = os.Stdout
-					cmd.Stderr = os.Stderr
-					if err := cmd.Run(); err != nil {
-						log.Fatal(err)
-					}
-				}
-			*/
 		}
 		data, err := json.MarshalIndent(frameInfos, "", "  ")
 		if err != nil {
@@ -434,49 +413,9 @@ func detectFrameInfo(info *info, img string) (*frameInfo, error) {
 		c1 := color.RGBAModel.Convert(src.At(k.center.X, k.center.Y)).(color.RGBA)
 		c2 := color.RGBAModel.Convert(k.actualColor).(color.RGBA)
 		dist := uint32(distu8(c1.R, c2.R)) + uint32(distu8(c1.G, c2.G)) + uint32(distu8(c1.B, c2.B))
-		//fmt.Println(dist)
 		if dist > 100 {
 			frameInfo.Keys[i] = true
 		}
-
-		//dist := distu32(r1, r2) + distu32(g1, g2) + distu32(b1, b2) + distu32(a1, a2)
-		//fmt.Println(distu32(r1, r2), distu32(g1, g2), distu32(b1, b2), distu32(a1, a2))
-		//fmt.Println(src.At(k.center.X, k.center.Y), k.actualColor)
-		//fmt.Println(dist)
-		//if dist > 2000*4 {
-		//	frameInfo.Keys[i] = true
-		//} else {
-		//}
 	}
 	return frameInfo, nil
 }
-
-/*
-func hasLineAtTop(img string) (bool, error) {
-	fmt.Println(img)
-	f, err := os.Open(img)
-	if err != nil {
-		return false, err
-	}
-	defer f.Close()
-
-	src, _, err := image.Decode(f)
-	if err != nil {
-		return false, err
-	}
-	//b := src.Bounds()
-	out := make([]uint32, 15)
-	for i := 0; i < len(out); i++ {
-		r, g, b, _ := src.At(250, i).RGBA()
-		out[i] = (r / 3) + (g / 3) + (b / 3)
-	}
-
-	a := (out[0] / 5) + (out[1] / 5) + (out[2] / 5) + (out[3] / 5) + (out[4] / 5)
-	b := (out[5] / 5) + (out[6] / 5) + (out[7] / 5) + (out[8] / 5) + (out[9] / 5)
-	c := (out[10] / 5) + (out[11] / 5) + (out[12] / 5) + (out[13] / 5) + (out[14] / 5)
-	if a > b && c > b || a < b && c < b {
-		return true, nil
-	}
-	return false, nil
-}
-*/
