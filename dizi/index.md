@@ -62,15 +62,15 @@ Simple notation is also used throughout the tabatures (to the right of the Engli
 | ●●○ ○○○   | 2̇    | D6       | E6       | F6#       | G6       | A6       | High.                   |
 | ●○○ ○○○   | 3̇    | E6       | F6#      | G6#       | A6       | B6       | High.                   |
 | ○●● ●●○   | 4̇    | F6       | G6       | A6        | A6#      | C7       | Altis. Alt ◐○○ ○○○      |
-| ○○○ ●●●   |      | F#6 +    | G#6 +    | A6# +     | B6 +     | C7# +    | Altis.                  |
+| ○○○ ●●●   |      | F#6+     | G#6+     | A6#+      | B6+      | C7#+     | Altis.                  |
 | ○●● ●●●   | 5̇    | G6       | A6       | B6        | C7       | D7       | Altis. Alt ●●○ ●●○      |
 
 * S.N. == [Simple Notation](https://en.wikipedia.org/wiki/Numbered_musical_notation#Numbered_notation_described)
 * X/Ym Key == Dizi in the key of 'X', which can ALSO be used to play in the relative key of 'Y' minor.
 * Std. == Standard blowing
-* High. == Higher octave whistling
-* Altis. == Altissimo octave. VERY hard to reach, extremely high pitch whistling sound.
-* `<Note> +` == Not actually in the key of 'X' but is playable.
+* High. == Higher pitch / octave sound.
+* Altis. == Altissimo octave. VERY hard to reach, extremely high pitch sound.
+* `<Note>+` == Not actually in the key of 'X' but is playable.
 
 ### Qudi 曲笛 D Key Fingerings
 
