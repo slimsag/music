@@ -138,11 +138,8 @@ func (p *PageView) section(song *song, section section) vecty.ComponentOrHTML {
 		if strings.Contains(note, "#") {
 			sharpSpacing = ""
 		}
-		if idx := strings.Index(finger.Fingers, " :"); idx != -1 {
-			finger.Fingers = finger.Fingers[:idx]
-		}
 		//label := fmt.Sprintf("%s%s | %s | %s", note, sharpSpacing, finger.SimpleNotation, finger.Fingers)
-		label := fmt.Sprintf("%s%s | %s", note, sharpSpacing, finger.Fingers)
+		label := fmt.Sprintf("%s%s | %s", note, sharpSpacing, finger.Accented())
 		notes = append(notes, elem.Preformatted(
 			vecty.Markup(
 				vecty.Style("margin", "0"),
