@@ -238,7 +238,7 @@ func main() {
 						ch = rightCh
 					}
 
-					if key.state == keyStatePressed || key.state == keyStatePressedAgain {
+					if key.state == keyStatePressed || key.state == keyStatePressedAgain || key.state == keyStateReleased {
 						if key.isLeftHand && downRightKeys[keyIndex] {
 							// Must release the right key.
 							_, err = wr.Write(rightCh.NoteOff(midiNote))
