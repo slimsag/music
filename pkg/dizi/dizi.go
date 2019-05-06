@@ -32,10 +32,62 @@ func (f Fingering) Alt() string {
 	return f.Fingers
 }
 
+// HTML returns the HTML wrapped in a `<x-f>` tag and with the middle blowing
+// tier character wrapped in an `<x-mN>` tag.
+func (f Fingering) HTML() string {
+	return f.html(f.Fingers)
+}
+
+// HTMLAlt returns the alternative fingering (or regular fingering if there is
+// none) in HTML form. See HTML for more information.
+func (f Fingering) HTMLAlt() string {
+	return f.html(f.Alt())
+}
+
+func (f Fingering) html(fingers string) string {
+	fr := []rune(fingers)
+	var r []rune
+	r = append(r, []rune("<x-f>")...)
+	r = append(r, fr[0:3]...)
+	switch f.Tier {
+	case 3:
+		r = append(r, []rune("<x-m3></x-m3>")...)
+	case 2:
+		r = append(r, []rune("<x-m2></x-m2>")...)
+	default:
+		r = append(r, []rune("<x-m1></x-m1>")...)
+	}
+	r = append(r, fr[4:7]...)
+	r = append(r, []rune("</x-f>")...)
+	return string(r)
+}
+
+// TierString returns a human-readable string describing the blowing tier.
+func (f Fingering) TierString() string {
+	switch f.Tier {
+	case 3:
+		return "very hard / very fast"
+	case 2:
+		return "hard / fast"
+	default:
+		return "soft / slow"
+	}
+}
+
 // Altis tells if this fingering produces an altissimo octave (a VERY hard to
 // reach, extremely high pitch sound.)
 func (f Fingering) Altis() bool {
 	return f.Tier == 3
+}
+
+// Ranges is a map of Dizi key names to their note ranges.
+var Ranges = map[string][2]string{
+	"G Bass": [2]string{"D4", "D6"},
+	"C":      [2]string{"G4", "G6"},
+	"D":      [2]string{"A4", "A6"},
+	"E":      [2]string{"B4", "B6"},
+	"F":      [2]string{"C5", "C7"},
+	"G":      [2]string{"D5", "D7"},
 }
 
 // NoteMappings is a map of Dizi key names (e.g. "C", "D", "E", etc.) to their
