@@ -1,6 +1,6 @@
 # Dizi (Chinese transverse flute)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ERYymjFXeiI?start=43" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="35rem" height="20rem" src="https://www.youtube.com/embed/ERYymjFXeiI?start=43" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 A dizi is a Chinese transverse flute, usually made out of Bamboo (but some more modern ones are also made of plastic, metal, and Afgan jade).
 
