@@ -11,7 +11,10 @@
       @import url("https://fonts.googleapis.com/css?family=Noto+Sans+SC");
 
       /* For our unicode combining characters */
-      @import url("https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=latin-ext");
+      @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+      /* For various symbols we use to denote flute finger accents, etc. */
+      @import url("https://slimsag.com/Symbola/Symbola.css");
 
       html,
       body {
@@ -19,7 +22,7 @@
         padding: 0;
         height: 100%;
         font-size: 16px;
-        font-family: "Open Sans", "Noto Sans SC";
+        font-family: "Open Sans", "Noto Sans SC", "Symbola";
       }
 
       body {
@@ -49,6 +52,8 @@
       x-f {
         display: inline-block;
         font-size: 12px;
+        font-family: "Symbola";
+        font-weight: 900;
       }
       x-m1,
       x-m2,
@@ -59,7 +64,10 @@
         position: relative;
         width: 12px;
         top: 4.5px;
-        left: -6px;
+        left: 3px;
+      }
+      x-m1 {
+        top: 2px;
       }
       x-m1:before {
         content: "‧";
